@@ -1,13 +1,21 @@
-﻿# Budget Calculator
+# Budget Calculator (Python)
 
-This folder contains my **Budget Calculator** Python project.
+A console tool to help track basic income and expenses and compute a remaining budget.
 
-I created this project to practice Python concepts and improve my problemâ€‘solving skills.
+## What this project demonstrates
+
+- Working with numeric input and simple calculations.
+- Breaking the program into small functions (e.g. add_expense, show_summary).
+- Printing clear, formatted summaries for the user.
+
+## Features
+
+- Enter income and multiple expenses.
+- Compute total expenses and remaining balance.
+- Potential categories (if implemented) like food, rent, travel.
 
 ## How to run
 
-1. Open this folder in a terminal.
-2. Make sure Python 3 is installed.
-3. Run the main script for this project (for example):
-   `ash
-   python main.py
+```bash
+cd python-projects/"Budget Calculator"
+python main.py
