@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Python & MIPS Projects – Manish Kumar (GrizX4051k)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Manish Kumar (GrizX4051k)" />
+
+  <!-- Bootstrap 5.3 CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+    crossorigin="anonymous"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Favicon (replace with a better URL if you want) -->
+  <link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/u/172516070?s=64" />
+</head>
+<body class="bg-light">
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary border-bottom sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-semibold" href="#">Python &amp; MIPS – GrizX4051k</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#mainNavbar" aria-controls="mainNavbar"
+              aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" id="nav-home" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://grizx4051k.github.io/Web-Development/" target="_blank">Web Dev</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://grizx4051k.github.io/linux-lab-site/" target="_blank">Linux</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://grizx4051k.github.io/C-Projects/" target="_blank">C Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact-section">Contact / Feedback</a>
+          </li>
+        </ul>
+
+        <form class="d-flex" role="search" id="search-form">
+          <input class="form-control me-2" type="search" placeholder="Search folders/files"
+                 aria-label="Search" id="search-input" />
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main layout -->
+  <div class="container-fluid mt-3">
+    <div class="row">
+      <!-- Left column: root tabs + tree -->
+      <div class="col-12 col-lg-3 border-end">
+        <!-- Root tabs -->
+        <ul class="nav nav-pills flex-column mb-3" id="rootTabs">
+          <li class="nav-item mb-1">
+            <button class="nav-link active w-100" data-root="docs">docs</button>
+          </li>
+          <li class="nav-item mb-1">
+            <button class="nav-link w-100" data-root="mips">mips</button>
+          </li>
+          <li class="nav-item mb-1">
+            <button class="nav-link w-100" data-root="python">python</button>
+          </li>
+        </ul>
+
+        <!-- Tree -->
+        <div id="tree-container" class="small">
+          <!-- JS injects tree here -->
+        </div>
+
+        <!-- Search results under tree -->
+        <div id="search-results" class="mt-3 small d-none">
+          <div class="fw-semibold mb-1">Search results</div>
+          <ul class="list-group list-group-flush" id="search-list"></ul>
+        </div>
+      </div>
+
+      <!-- Right column: dynamic content -->
+      <div class="col-12 col-lg-9">
+        <div id="content-area" class="fade-in">
+          <!-- JS fills: home view, folder view, file view -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact anchor (used by navbar link) -->
+  <div id="contact-section" class="mt-5"></div>
+
+  <!-- Bootstrap JS -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+
+  <!-- Formspree Formbutton -->
+  <script src="https://formspree.io/js/formbutton-v1.min.js" defer></script>
+  <script>
+    window.formbutton = window.formbutton || function(){(formbutton.q=formbutton.q||[]).push(arguments);};
+    formbutton("create", {
+      action: "https://formspree.io/f/mdalwknz",
+      title: "Contact Manish / Feedback",
+      fields: [
+        { type: "email", label: "Email", name: "email", required: true },
+        { type: "textarea", label: "Message", name: "message", required: true }
+      ],
+      styles: { fontFamily: "system-ui" },
+      submitText: "Send"
+    });
+  </script>
+
+  <script src="app.js"></script>
+</body>
+</html>
