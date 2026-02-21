@@ -1,13 +1,21 @@
-﻿# Time calculator
+# Time Calculator (Python)
 
-This folder contains my **Time calculator** Python project.
+A small utility to perform basic time calculations, such as adding durations or finding differences between times.
 
-I created this project to practice Python concepts and improve my problemâ€‘solving skills.
+## What this project demonstrates
+
+- Working with hours/minutes (and possibly seconds).
+- Converting user input into a consistent internal representation.
+- Formatting output cleanly back to human-readable time.
+
+## Features (depending on your code)
+
+- Add two time values.
+- Subtract one time from another.
+- Normalize results (e.g. 90 minutes → 1 hour 30 minutes).
 
 ## How to run
 
-1. Open this folder in a terminal.
-2. Make sure Python 3 is installed.
-3. Run the main script for this project (for example):
-   `ash
-   python main.py
+```bash
+cd python-projects/"Time calculator"
+python main.py
