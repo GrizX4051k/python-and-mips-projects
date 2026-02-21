@@ -4,9 +4,10 @@ This folder contains my MIPS assembly practice files.
 
 ## Files
 
-- `c.asm`
-- `Icrand.asm`
-- `mips1.asm`
+- `c.asm` – small C-style exercise rewritten in MIPS (loops, arithmetic, basic I/O).
+- `Icrand.asm` – integer/random demo, practicing syscalls and simple pseudo-random logic.
+- `mips1.asm` – first MIPS lab program focusing on core instructions and control flow.
+
 
 Each file explores different instructions, control flow, or algorithms in MIPS.
 
