@@ -1,13 +1,23 @@
-﻿# Probability Calculator
+# Probability Calculator (Python)
 
-This folder contains my **Probability Calculator** Python project.
+A console-based helper for basic probability calculations.
 
-I created this project to practice Python concepts and improve my problemâ€‘solving skills.
+## What this project demonstrates
+
+- Translating simple probability formulas into Python code.
+- Handling fractions, percentages, and conditional logic.
+- Designing a small menu or mode selection (if you support multiple types of problems).
+
+## Possible capabilities
+
+Depending on your implementation, this project may:
+
+- Compute simple probability of single events.
+- Combine probabilities for independent/dependent events.
+- Convert between fraction and percentage representations.
 
 ## How to run
 
-1. Open this folder in a terminal.
-2. Make sure Python 3 is installed.
-3. Run the main script for this project (for example):
-   `ash
-   python main.py
+```bash
+cd python-projects/"Probability Calculator"
+python main.py
