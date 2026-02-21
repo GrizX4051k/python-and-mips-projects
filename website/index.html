@@ -114,9 +114,11 @@
     formbutton("create", {
       action: "https://formspree.io/f/mdalwknz",
       title: "Contact Manish / Feedback",
+      description: "We'll get back to you as soon as possible.",
       fields: [
         { type: "email", label: "Email", name: "email", required: true },
-        { type: "textarea", label: "Message", name: "message", required: true }
+        { type: "textarea", label: "Message", name: "message", required: true },
+        { type: "submit", label: "Send Message", name: "submit", required: true }
       ],
       styles: { fontFamily: "system-ui" },
       submitText: "Send"
