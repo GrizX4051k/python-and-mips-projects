@@ -1,13 +1,19 @@
-﻿# Polygon Area Calculator
+# Polygon Area Calculator (Python)
 
-This folder contains my **Polygon Area Calculator** Python project.
+A Python program to calculate the area of a regular polygon based on the number of sides and the length of each side.[web:18][web:21]
 
-I created this project to practice Python concepts and improve my problemâ€‘solving skills.
+## What this project demonstrates
+
+- Using math formulas in Python.
+- Working with user input and floating-point numbers.
+- Separating input, calculation, and output logic.
+
+## Formula (concept)
+
+For a regular polygon with `n` sides of length `s`, the area can be computed using a standard geometry formula (see typical textbook or online resources).[web:18]
 
 ## How to run
 
-1. Open this folder in a terminal.
-2. Make sure Python 3 is installed.
-3. Run the main script for this project (for example):
-   `ash
-   python main.py
+```bash
+cd python-projects/"Polygon Area Calculator"
+python main.py
