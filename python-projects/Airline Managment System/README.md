@@ -1,13 +1,27 @@
-﻿# Airline Managment System
+# Airline Management System (Python)
 
-This folder contains my **Airline Managment System** Python project.
+A console-based Airline Management System written in Python.  
+It simulates core airline operations like managing flights, passengers, and basic ticket booking in a text interface.
 
-I created this project to practice Python concepts and improve my problemâ€‘solving skills.
+## What this project demonstrates
+
+- Object-Oriented Programming in Python (classes for flights, passengers, etc.).
+- Working with lists/dictionaries to store and manipulate data.
+- Menu-driven console UI and input validation.
+
+## Features (typical flow)
+
+- Add, update, or list available flights.
+- Register passengers.
+- Book or cancel tickets.
+- Display simple reports (e.g. passenger lists or flight details).
+
+> This is a learning project, not a real production system, but it mirrors how basic airline workflows can be modeled in code.[web:17][web:20]
 
 ## How to run
 
-1. Open this folder in a terminal.
-2. Make sure Python 3 is installed.
-3. Run the main script for this project (for example):
-   `ash
-   python main.py
+From the repo root:
+
+```bash
+cd python-projects/"Airline Managment System"
+python main.py
