@@ -1,13 +1,21 @@
-﻿# Arithmetic calculator
+# Arithmetic Calculator (Python)
 
-This folder contains my **Arithmetic calculator** Python project.
+A simple command-line calculator that performs basic arithmetic operations.
 
-I created this project to practice Python concepts and improve my problemâ€‘solving skills.
+## What this project demonstrates
+
+- Taking user input from the terminal.
+- Handling integers/floats and basic operators.
+- Structuring a small utility script with clear functions.
+
+## Features
+
+- Addition, subtraction, multiplication, division.
+- Basic input validation (depending on how you implemented it).
+- Loop/repeat until the user chooses to exit.
 
 ## How to run
 
-1. Open this folder in a terminal.
-2. Make sure Python 3 is installed.
-3. Run the main script for this project (for example):
-   `ash
-   python main.py
+```bash
+cd python-projects/"Arithmetic calculator"
+python main.py
