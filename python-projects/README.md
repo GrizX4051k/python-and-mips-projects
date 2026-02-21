@@ -1,4 +1,3 @@
-```
 # Python Projects
 
 This folder collects my early Python console projects: calculators, small management systems, and college assignments.
