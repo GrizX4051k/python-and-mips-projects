@@ -1,4 +1,4 @@
-// --------- Repo tree (top-level folders only) ----------
+// --------- Repo tree (top-level folders + College children) ----------
 
 const repoTree = {
   docs: {
@@ -77,17 +77,51 @@ const repoTree = {
         path: "python-projects/Time calculator",
         readme: "python-projects/Time calculator/README.md",
       },
+
+      // College Project root – children live one level below
       "College Project": {
         type: "folder",
         label: "College Project",
         path: "python-projects/College Project",
         readme: "python-projects/College Project/README.md",
+
+        children: {
+          "01-cafewall":           { type: "folder", label: "01-cafewall",           path: "python-projects/College Project/01-cafewall" },
+          "02-cipher-rotation":    { type: "folder", label: "02-cipher-rotation",    path: "python-projects/College Project/02-cipher-rotation" },
+          "03-classes":            { type: "folder", label: "03-classes",            path: "python-projects/College Project/03-classes" },
+          "04-complete-loop":      { type: "folder", label: "04-complete-loop",      path: "python-projects/College Project/04-complete-loop" },
+          "05-days-in-month":      { type: "folder", label: "05-days-in-month",      path: "python-projects/College Project/05-days-in-month" },
+          "06-error-demo":         { type: "folder", label: "06-error-demo",         path: "python-projects/College Project/06-error-demo" },
+          "07-gradescope-1":       { type: "folder", label: "07-gradescope-1",       path: "python-projects/College Project/07-gradescope-1" },
+          "08-greet-world":        { type: "folder", label: "08-greet-world",        path: "python-projects/College Project/08-greet-world" },
+          "09-if-else-examples":   { type: "folder", label: "09-if-else-examples",   path: "python-projects/College Project/09-if-else-examples" },
+          "10-input-color":        { type: "folder", label: "10-input-color",        path: "python-projects/College Project/10-input-color" },
+          "11-input-even-odd":     { type: "folder", label: "11-input-even-odd",     path: "python-projects/College Project/11-input-even-odd" },
+          "12-is-vowel":           { type: "folder", label: "12-is-vowel",           path: "python-projects/College Project/12-is-vowel" },
+          "13-number-square":      { type: "folder", label: "13-number-square",      path: "python-projects/College Project/13-number-square" },
+          "14-piglet-game":        { type: "folder", label: "14-piglet-game",        path: "python-projects/College Project/14-piglet-game" },
+          "15-quadratic-equation": { type: "folder", label: "15-quadratic-equation", path: "python-projects/College Project/15-quadratic-equation" },
+          "16-quiz-4":             { type: "folder", label: "16-quiz-4",             path: "python-projects/College Project/16-quiz-4" },
+          "17-return-example":     { type: "folder", label: "17-return-example",     path: "python-projects/College Project/17-return-example" },
+          "18-rotation":           { type: "folder", label: "18-rotation",           path: "python-projects/College Project/18-rotation" },
+          "19-zune-bug":           { type: "folder", label: "19-zune-bug",           path: "python-projects/College Project/19-zune-bug" },
+
+          "02-cafewall-illusion":  { type: "folder", label: "02-cafewall-illusion",  path: "python-projects/College Project/02-cafewall-illusion" },
+          "03-dna-analyzer":       { type: "folder", label: "03-dna-analyzer",       path: "python-projects/College Project/03-dna-analyzer" },
+          "04-file-input-output":  { type: "folder", label: "04-file-input-output",  path: "python-projects/College Project/04-file-input-output" },
+          "05-gerrymandering":     { type: "folder", label: "05-gerrymandering",     path: "python-projects/College Project/05-gerrymandering" },
+          "06-guessing-game":      { type: "folder", label: "06-guessing-game",      path: "python-projects/College Project/06-guessing-game" },
+          "07-saguro-tree":        { type: "folder", label: "07-saguro-tree",        path: "python-projects/College Project/07-saguro-tree" },
+          "08-etch-a-sketch":      { type: "folder", label: "08-etch-a-sketch",      path: "python-projects/College Project/08-etch-a-sketch" },
+          "09-gradanator":         { type: "folder", label: "09-gradanator",         path: "python-projects/College Project/09-gradanator" },
+          "10-recommender":        { type: "folder", label: "10-recommender",        path: "python-projects/College Project/10-recommender" },
+        },
       },
     },
   },
 };
 
-// --------- Helpers ----------
+// --------- DOM + simple helpers ----------
 
 const contentArea = document.getElementById("content-area");
 const treeContainer = document.getElementById("tree-container");
@@ -107,59 +141,10 @@ async function fetchText(path) {
   return res.text();
 }
 
-// Generic GitHub folder html fetch
-async function fetchGithubFolderEntries(path) {
-  const githubTreeUrl = `https://github.com/GrizX4051k/python-and-mips-projects/tree/main/${path}`;
-  const htmlRes = await fetch(githubTreeUrl);
-  if (!htmlRes.ok) {
-    throw new Error("Folder listing failed");
-  }
-  const htmlText = await htmlRes.text();
-  const parser = new DOMParser();
-  const doc = parser.parseFromString(htmlText, "text/html");
-
-  const entries = [];
-
-  // 1) New layout: file/folder cards under div[role="grid"]
-  const grid = doc.querySelector('div[role="grid"]');
-  if (grid) {
-    grid.querySelectorAll('a.js-navigation-open').forEach((link) => {
-      const name = link.textContent.trim();
-      if (!name || name === "..") return;
-
-      const row = link.closest('[role="row"]') || link.closest("div");
-      const icon = row ? row.querySelector('svg[aria-label]') : null;
-      const aria = icon ? icon.getAttribute("aria-label") || "" : "";
-      const isDir = aria.toLowerCase().includes("directory");
-
-      entries.push({ name, isDir });
-    });
-  }
-
-  // 2) Old layout: table[role="grid"] fallback
-  if (entries.length === 0) {
-    const rows = doc.querySelectorAll('table[role="grid"] tbody tr');
-    rows.forEach((row) => {
-      const link = row.querySelector("a.js-navigation-open");
-      if (!link) return;
-      const name = link.textContent.trim();
-      if (!name || name === "..") return;
-
-      const icon = row.querySelector('svg[aria-label]');
-      const aria = icon ? icon.getAttribute("aria-label") || "" : "";
-      const isDir = aria.toLowerCase().includes("directory");
-
-      entries.push({ name, isDir });
-    });
-  }
-
-  if (entries.length === 0) {
-    throw new Error("No entries parsed");
-  }
-
-  return entries;
+function escapeHtml(str) {
+  if (!str) return "";
+  return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 }
-
 
 // --------- Home view ----------
 
@@ -198,8 +183,28 @@ async function showHome() {
       </div>
     </div>
   `;
-
   setContent(html);
+}
+
+// --------- GitHub contents API (CORS-safe) ----------
+//
+// Uses raw.githubusercontent.com + ?plain=1 to get JSON listing for a folder.
+// Example API path: python-projects/Arithmetic calculator
+//
+async function fetchGithubContents(path) {
+  // GitHub raw JSON endpoint for contents listing:
+  // https://raw.githubusercontent.com/USER/REPO/BRANCH/path?token=...  — but
+  // the official API is api.github.com/repos/.../contents; that also sends CORS.
+  const apiUrl = `https://api.github.com/repos/GrizX4051k/python-and-mips-projects/contents/${encodeURIComponent(
+    path
+  )}`;
+  const res = await fetch(apiUrl);
+  if (!res.ok) {
+    throw new Error("Contents API failed");
+  }
+  const json = await res.json();
+  // json is an array of objects {name, path, type: 'file'|'dir', download_url, ...}
+  return json;
 }
 
 // --------- Tree rendering ----------
@@ -222,6 +227,23 @@ function renderTree(rootKey) {
           </div>
         </li>
       `;
+    }
+
+    // For College Project root, show its children one level deep
+    if (rootKey === "python" && root.children["College Project"]?.children) {
+      const college = root.children["College Project"];
+      html += `<li class="mt-1 ms-1 small text-muted">College Project</li>`;
+      html += `<ul class="list-unstyled ms-3">`;
+      for (const [cName] of Object.entries(college.children)) {
+        html += `
+          <li>
+            <div class="tree-node" data-root="college" data-name="${cName}">
+              <span class="icon">📁</span>${cName}
+            </div>
+          </li>
+        `;
+      }
+      html += `</ul>`;
     }
   }
 
@@ -255,39 +277,75 @@ treeContainer.addEventListener("click", (e) => {
     if (node) showPythonProjectFolder(node);
     return;
   }
+
+  if (rootKey === "college") {
+    const collegeRoot = repoTree.python.children["College Project"];
+    const node = collegeRoot.children[name];
+    if (node) showPythonProjectFolder(node);
+    return;
+  }
 });
 
-// --------- Python project 4‑pane view (any folder, any files) ----------
+// --------- Python project 4‑pane view (any folder) ----------
 
 async function showPythonProjectFolder(folderNode) {
   const folderPath = folderNode.path;
-  const githubTreeUrl = `https://github.com/GrizX4051k/python-and-mips-projects/tree/main/${folderPath}`;
+  const githubTreeUrl = `https://github.com/GrizX4051k/python-and-mips-projects/tree/main/${encodeURIComponent(
+    folderPath
+  )}`;
 
   let entries;
   try {
-    entries = await fetchGithubFolderEntries(folderPath);
+    entries = await fetchGithubContents(folderPath);
   } catch (e) {
-    setContent(`<div class="alert alert-danger">Could not load folder listing for ${folderNode.label}.</div>`);
+    setContent(
+      `<div class="alert alert-danger">Could not load folder listing for ${folderNode.label}.</div>`
+    );
     return;
   }
 
-  // Fetch contents for all non‑directory entries
   const files = [];
   for (const entry of entries) {
-    if (entry.isDir) continue;
-    const rawUrl = `https://raw.githubusercontent.com/GrizX4051k/python-and-mips-projects/main/${folderPath}/${entry.name}`;
-    const res = await fetch(rawUrl);
-    if (!res.ok) {
-      files.push({ name: entry.name, text: `Could not load ${entry.name}`, isBinary: false });
-    } else {
-      const text = await res.text();
-      files.push({ name: entry.name, text, isBinary: false });
+    if (entry.type !== "file") continue;
+    const downloadUrl = entry.download_url;
+    let text = "";
+    let isBinary = false;
+
+    try {
+      const res = await fetch(downloadUrl);
+      if (!res.ok) {
+        text = `Could not load ${entry.name}`;
+      } else {
+        const contentType = res.headers.get("content-type") || "";
+        if (
+          contentType.startsWith("text/") ||
+          contentType.includes("json") ||
+          contentType.includes("xml")
+        ) {
+          text = await res.text();
+        } else {
+          isBinary = true;
+          text = `[binary file: ${contentType || "unknown"}]\n\nOpen directly on GitHub:\n${downloadUrl}`;
+        }
+      }
+    } catch {
+      text = `Could not load ${entry.name}`;
     }
+
+    files.push({
+      name: entry.name,
+      path: entry.path,
+      text,
+      isBinary,
+      htmlUrl: entry.html_url || githubTreeUrl,
+      downloadUrl,
+    });
   }
 
-  // Pick defaults
-  const readme = files.find((f) => f.name.toLowerCase() === "readme.md");
-  // Prefer main.py, else first .py, else first file
+  const readme =
+    files.find((f) => f.name.toLowerCase() === "readme.md") ||
+    files.find((f) => f.name.toLowerCase().startsWith("readme"));
+
   let defaultFile =
     files.find((f) => f.name === "main.py") ||
     files.find((f) => f.name.toLowerCase().endsWith(".py")) ||
@@ -316,11 +374,11 @@ async function showPythonProjectFolder(folderNode) {
             <ul class="list-group app-file-list">
               ${entries
                 .map((e) => {
-                  const isDir = e.isDir;
+                  const isDir = e.type === "dir";
                   const icon = isDir ? "bi-folder" : "bi-file-earmark-code";
                   const meta = isDir ? "folder" : "file";
                   return `
-                  <li class="list-group-item d-flex justify-content-between align-items-center file-item ${
+                  <li class="list-group-item file-item ${
                     isDir ? "disabled" : ""
                   }" data-fname="${e.name}">
                     <span><i class="bi ${icon} me-1"></i>${e.name}</span>
@@ -385,10 +443,10 @@ async function showPythonProjectFolder(folderNode) {
                   height="260px"
                   src="https://onecompiler.com/embed/python"
                   width="100%"
-                  style="border:1px solid rgba(148,163,184,0.4);"
+                  style="border:1px solid rgba(148,163,184,0.4);border-radius:0.75rem;"
                 ></iframe>
                 <small class="text-muted d-block mt-2" style="font-size:0.8rem;">
-                  Use <strong>Copy</strong> or <strong>Send to editor</strong> to move the current file into the editor above.
+                  Copy or send the current file into the editor above and run it.
                 </small>
               </div>
             </div>
@@ -401,7 +459,6 @@ async function showPythonProjectFolder(folderNode) {
 
   setContent(html);
 
-  // Wire up code viewer
   const codeView = document.getElementById("code-view");
   const currentLabel = document.getElementById("current-file-label");
   let currentFile = defaultFile;
@@ -410,7 +467,6 @@ async function showPythonProjectFolder(folderNode) {
     codeView.textContent = currentFile.text;
   }
 
-  // File list clicks (only files, not dirs)
   document.querySelectorAll(".file-item").forEach((li) => {
     if (li.classList.contains("disabled")) return;
     li.addEventListener("click", () => {
@@ -425,7 +481,6 @@ async function showPythonProjectFolder(folderNode) {
     });
   });
 
-  // Reset
   document.getElementById("btn-reset").addEventListener("click", () => {
     if (!currentFile) return;
     const original = files.find((x) => x.name === currentFile.name);
@@ -433,7 +488,6 @@ async function showPythonProjectFolder(folderNode) {
     codeView.textContent = original.text;
   });
 
-  // Copy
   document.getElementById("btn-copy").addEventListener("click", async () => {
     if (!currentFile) return;
     try {
@@ -444,7 +498,6 @@ async function showPythonProjectFolder(folderNode) {
     }
   });
 
-  // Send to editor = copy; user pastes into OneCompiler
   document.getElementById("btn-send").addEventListener("click", async () => {
     if (!currentFile) return;
     try {
@@ -456,7 +509,7 @@ async function showPythonProjectFolder(folderNode) {
   });
 }
 
-// --------- Views for docs / mips ----------
+// --------- Docs / MIPS views ----------
 
 function showPdf(node) {
   const githubUrl = `https://github.com/GrizX4051k/python-and-mips-projects/blob/main/${node.path}`;
@@ -492,9 +545,6 @@ async function showCodeFile(node, languageLabel) {
   setContent(html);
 }
 
-// Legacy simple Python view is no longer used for main roots,
-// everything routes to showPythonProjectFolder instead.
-
 // --------- Search ----------
 
 const searchForm = document.getElementById("search-form");
@@ -512,19 +562,16 @@ searchForm.addEventListener("submit", (e) => {
 
   const matches = [];
 
-  // docs
   for (const [name] of Object.entries(repoTree.docs.children)) {
     if (name.toLowerCase().includes(q)) {
       matches.push({ root: "docs", name, label: `docs / ${name}` });
     }
   }
-  // mips
   for (const [name] of Object.entries(repoTree.mips.children)) {
     if (name.toLowerCase().includes(q)) {
       matches.push({ root: "mips", name, label: `mips / ${name}` });
     }
   }
-  // python folders
   for (const [name] of Object.entries(repoTree.python.children)) {
     if (name.toLowerCase().includes(q)) {
       matches.push({ root: "python", name, label: `python / ${name}` });
@@ -543,17 +590,17 @@ searchForm.addEventListener("submit", (e) => {
   searchResultsBox.classList.toggle("d-none", matches.length === 0);
 });
 
-// click search items
 searchList.addEventListener("click", (e) => {
   const li = e.target.closest("li");
   if (!li) return;
   const root = li.dataset.root;
   const name = li.dataset.name;
-  // switch root tab
+
   document.querySelectorAll("#rootTabs .nav-link").forEach((btn) => {
     btn.classList.toggle("active", btn.dataset.root === root);
   });
   renderTree(root);
+
   if (root === "docs") {
     const node = repoTree.docs.children[name];
     if (node) showPdf(node);
@@ -585,13 +632,6 @@ document.getElementById("nav-home").addEventListener("click", (e) => {
   e.preventDefault();
   showHome();
 });
-
-// --------- Utility ----------
-
-function escapeHtml(str) {
-  if (!str) return "";
-  return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-}
 
 // --------- Init ----------
 
