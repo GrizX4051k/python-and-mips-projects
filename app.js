@@ -282,13 +282,10 @@ async function showHome() {
           </div>
           <div class="card-body text-center">
             <img class="img-fluid mb-2"
-              src="https://github-readme-stats-five-delta-54.vercel.app/api?username=GrizX4051k&show_icons=true&theme=radical&include_all_commits=true&count_private=true&hide_rank=false&number_format=long&cache_seconds=60"
-              alt="GitHub stats for GrizX4051k" />
-            <img class="img-fluid mb-2"
-              src="https://github-readme-stats-five-delta-54.vercel.app/api/top-langs/?username=GrizX4051k&layout=compact&langs_count=10&theme=radical&hide=html,css,javascript,typescript&cache_seconds=60"
+              src="https://github-readme-stats-five-delta-54.vercel.app/api/top-langs/?username=GrizX4051k&layout=compact&langs_count=10&theme=radical&cache_seconds=60"
               alt="Top languages" />
             <img class="img-fluid"
-              src="https://github-readme-stats-five-delta-54.vercel.app/api/pin/?username=GrizX4051k&repo=python-and-mips-projects&theme=radical&show_owner=true&cache_seconds=60"
+              src="https://github-readme-stats-five-delta-54.vercel.app/api/pin/?username=GrizX4051k&repo=GrizX4051k&theme=radical&show_owner=true&&cache_seconds=60"
               alt="python-and-mips-projects repo card" />
           </div>
         </div>
