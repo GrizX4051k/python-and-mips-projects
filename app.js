@@ -301,7 +301,6 @@ async function showHome() {
   }
 }
 
-
 // --------- GitHub contents API (CORS-safe) ----------
 //
 // Uses raw.githubusercontent.com + ?plain=1 to get JSON listing for a folder.
@@ -461,7 +460,6 @@ async function showPythonProjectFolder(folderNode) {
   const readme =
     files.find((f) => f.name.toLowerCase() === "readme.md") ||
     files.find((f) => f.name.toLowerCase().startsWith("readme"));
-    
 
   let defaultFile =
     files.find((f) => f.name === "main.py") ||
@@ -490,18 +488,19 @@ async function showPythonProjectFolder(folderNode) {
             </div>
             <ul class="list-group app-file-list">
               ${entries
-      .map((e) => {
-        const isDir = e.type === "dir";
-        const icon = isDir ? "bi-folder" : "bi-file-earmark-code";
-        const meta = isDir ? "folder" : "file";
-        return `
-                  <li class="list-group-item file-item ${isDir ? "disabled" : ""
-          }" data-fname="${e.name}">
+                .map((e) => {
+                  const isDir = e.type === "dir";
+                  const icon = isDir ? "bi-folder" : "bi-file-earmark-code";
+                  const meta = isDir ? "folder" : "file";
+                  return `
+                  <li class="list-group-item file-item ${
+                    isDir ? "disabled" : ""
+                  }" data-fname="${e.name}">
                     <span><i class="bi ${icon} me-1"></i>${e.name}</span>
                     <span class="file-meta">${meta}</span>
                   </li>`;
-      })
-      .join("")}
+                })
+                .join("")}
             </ul>
           </div>
 
@@ -624,13 +623,12 @@ async function showPythonProjectFolder(folderNode) {
     }
   });
 
-document.getElementById("btn-send").addEventListener("click", async () => {
-  const frame = document.getElementById("onecompiler-frame");
-  const codeView = document.getElementById("code-view");
-  if (!frame || !frame.contentWindow || !codeView) return;
+  document.getElementById("btn-send").addEventListener("click", async () => {
+    const frame = document.getElementById("onecompiler-frame");
+    const codeView = document.getElementById("code-view");
+    if (!frame || !frame.contentWindow || !codeView) return;
 
-  const code = codeView.textContent || "";
-    
+    const code = codeView.textContent || "";
 
     try {
       await navigator.clipboard.writeText(code);
