@@ -86,35 +86,147 @@ const repoTree = {
         readme: "python-projects/College Project/README.md",
 
         children: {
-          "01-cafewall":           { type: "folder", label: "01-cafewall",           path: "python-projects/College Project/01-cafewall" },
-          "02-cipher-rotation":    { type: "folder", label: "02-cipher-rotation",    path: "python-projects/College Project/02-cipher-rotation" },
-          "03-classes":            { type: "folder", label: "03-classes",            path: "python-projects/College Project/03-classes" },
-          "04-complete-loop":      { type: "folder", label: "04-complete-loop",      path: "python-projects/College Project/04-complete-loop" },
-          "05-days-in-month":      { type: "folder", label: "05-days-in-month",      path: "python-projects/College Project/05-days-in-month" },
-          "06-error-demo":         { type: "folder", label: "06-error-demo",         path: "python-projects/College Project/06-error-demo" },
-          "07-gradescope-1":       { type: "folder", label: "07-gradescope-1",       path: "python-projects/College Project/07-gradescope-1" },
-          "08-greet-world":        { type: "folder", label: "08-greet-world",        path: "python-projects/College Project/08-greet-world" },
-          "09-if-else-examples":   { type: "folder", label: "09-if-else-examples",   path: "python-projects/College Project/09-if-else-examples" },
-          "10-input-color":        { type: "folder", label: "10-input-color",        path: "python-projects/College Project/10-input-color" },
-          "11-input-even-odd":     { type: "folder", label: "11-input-even-odd",     path: "python-projects/College Project/11-input-even-odd" },
-          "12-is-vowel":           { type: "folder", label: "12-is-vowel",           path: "python-projects/College Project/12-is-vowel" },
-          "13-number-square":      { type: "folder", label: "13-number-square",      path: "python-projects/College Project/13-number-square" },
-          "14-piglet-game":        { type: "folder", label: "14-piglet-game",        path: "python-projects/College Project/14-piglet-game" },
-          "15-quadratic-equation": { type: "folder", label: "15-quadratic-equation", path: "python-projects/College Project/15-quadratic-equation" },
-          "16-quiz-4":             { type: "folder", label: "16-quiz-4",             path: "python-projects/College Project/16-quiz-4" },
-          "17-return-example":     { type: "folder", label: "17-return-example",     path: "python-projects/College Project/17-return-example" },
-          "18-rotation":           { type: "folder", label: "18-rotation",           path: "python-projects/College Project/18-rotation" },
-          "19-zune-bug":           { type: "folder", label: "19-zune-bug",           path: "python-projects/College Project/19-zune-bug" },
+          "01-cafewall": {
+            type: "folder",
+            label: "01-cafewall",
+            path: "python-projects/College Project/01-cafewall",
+          },
+          "02-cipher-rotation": {
+            type: "folder",
+            label: "02-cipher-rotation",
+            path: "python-projects/College Project/02-cipher-rotation",
+          },
+          "03-classes": {
+            type: "folder",
+            label: "03-classes",
+            path: "python-projects/College Project/03-classes",
+          },
+          "04-complete-loop": {
+            type: "folder",
+            label: "04-complete-loop",
+            path: "python-projects/College Project/04-complete-loop",
+          },
+          "05-days-in-month": {
+            type: "folder",
+            label: "05-days-in-month",
+            path: "python-projects/College Project/05-days-in-month",
+          },
+          "06-error-demo": {
+            type: "folder",
+            label: "06-error-demo",
+            path: "python-projects/College Project/06-error-demo",
+          },
+          "07-gradescope-1": {
+            type: "folder",
+            label: "07-gradescope-1",
+            path: "python-projects/College Project/07-gradescope-1",
+          },
+          "08-greet-world": {
+            type: "folder",
+            label: "08-greet-world",
+            path: "python-projects/College Project/08-greet-world",
+          },
+          "09-if-else-examples": {
+            type: "folder",
+            label: "09-if-else-examples",
+            path: "python-projects/College Project/09-if-else-examples",
+          },
+          "10-input-color": {
+            type: "folder",
+            label: "10-input-color",
+            path: "python-projects/College Project/10-input-color",
+          },
+          "11-input-even-odd": {
+            type: "folder",
+            label: "11-input-even-odd",
+            path: "python-projects/College Project/11-input-even-odd",
+          },
+          "12-is-vowel": {
+            type: "folder",
+            label: "12-is-vowel",
+            path: "python-projects/College Project/12-is-vowel",
+          },
+          "13-number-square": {
+            type: "folder",
+            label: "13-number-square",
+            path: "python-projects/College Project/13-number-square",
+          },
+          "14-piglet-game": {
+            type: "folder",
+            label: "14-piglet-game",
+            path: "python-projects/College Project/14-piglet-game",
+          },
+          "15-quadratic-equation": {
+            type: "folder",
+            label: "15-quadratic-equation",
+            path: "python-projects/College Project/15-quadratic-equation",
+          },
+          "16-quiz-4": {
+            type: "folder",
+            label: "16-quiz-4",
+            path: "python-projects/College Project/16-quiz-4",
+          },
+          "17-return-example": {
+            type: "folder",
+            label: "17-return-example",
+            path: "python-projects/College Project/17-return-example",
+          },
+          "18-rotation": {
+            type: "folder",
+            label: "18-rotation",
+            path: "python-projects/College Project/18-rotation",
+          },
+          "19-zune-bug": {
+            type: "folder",
+            label: "19-zune-bug",
+            path: "python-projects/College Project/19-zune-bug",
+          },
 
-          "02-cafewall-illusion":  { type: "folder", label: "02-cafewall-illusion",  path: "python-projects/College Project/02-cafewall-illusion" },
-          "03-dna-analyzer":       { type: "folder", label: "03-dna-analyzer",       path: "python-projects/College Project/03-dna-analyzer" },
-          "04-file-input-output":  { type: "folder", label: "04-file-input-output",  path: "python-projects/College Project/04-file-input-output" },
-          "05-gerrymandering":     { type: "folder", label: "05-gerrymandering",     path: "python-projects/College Project/05-gerrymandering" },
-          "06-guessing-game":      { type: "folder", label: "06-guessing-game",      path: "python-projects/College Project/06-guessing-game" },
-          "07-saguro-tree":        { type: "folder", label: "07-saguro-tree",        path: "python-projects/College Project/07-saguro-tree" },
-          "08-etch-a-sketch":      { type: "folder", label: "08-etch-a-sketch",      path: "python-projects/College Project/08-etch-a-sketch" },
-          "09-gradanator":         { type: "folder", label: "09-gradanator",         path: "python-projects/College Project/09-gradanator" },
-          "10-recommender":        { type: "folder", label: "10-recommender",        path: "python-projects/College Project/10-recommender" },
+          "02-cafewall-illusion": {
+            type: "folder",
+            label: "02-cafewall-illusion",
+            path: "python-projects/College Project/02-cafewall-illusion",
+          },
+          "03-dna-analyzer": {
+            type: "folder",
+            label: "03-dna-analyzer",
+            path: "python-projects/College Project/03-dna-analyzer",
+          },
+          "04-file-input-output": {
+            type: "folder",
+            label: "04-file-input-output",
+            path: "python-projects/College Project/04-file-input-output",
+          },
+          "05-gerrymandering": {
+            type: "folder",
+            label: "05-gerrymandering",
+            path: "python-projects/College Project/05-gerrymandering",
+          },
+          "06-guessing-game": {
+            type: "folder",
+            label: "06-guessing-game",
+            path: "python-projects/College Project/06-guessing-game",
+          },
+          "07-saguro-tree": {
+            type: "folder",
+            label: "07-saguro-tree",
+            path: "python-projects/College Project/07-saguro-tree",
+          },
+          "08-etch-a-sketch": {
+            type: "folder",
+            label: "08-etch-a-sketch",
+            path: "python-projects/College Project/08-etch-a-sketch",
+          },
+          "09-gradanator": {
+            type: "folder",
+            label: "09-gradanator",
+            path: "python-projects/College Project/09-gradanator",
+          },
+          "10-recommender": {
+            type: "folder",
+            label: "10-recommender",
+            path: "python-projects/College Project/10-recommender",
+          },
         },
       },
     },
@@ -159,7 +271,7 @@ async function showHome() {
             <span>python-and-mips-projects – README.md</span>
           </div>
           <div class="card-body">
-            <pre style="white-space:pre-wrap;">${escapeHtml(readmeText)}</pre>
+            <div id="home-readme" class="readme-markdown"></div>
           </div>
         </div>
       </div>
@@ -183,8 +295,15 @@ async function showHome() {
       </div>
     </div>
   `;
+
   setContent(html);
+
+  const homeReadme = document.getElementById("home-readme");
+  if (homeReadme) {
+    homeReadme.innerHTML = marked.parse(readmeText);
+  }
 }
+
 
 // --------- GitHub contents API (CORS-safe) ----------
 //
@@ -196,7 +315,7 @@ async function fetchGithubContents(path) {
   // https://raw.githubusercontent.com/USER/REPO/BRANCH/path?token=...  — but
   // the official API is api.github.com/repos/.../contents; that also sends CORS.
   const apiUrl = `https://api.github.com/repos/GrizX4051k/python-and-mips-projects/contents/${encodeURIComponent(
-    path
+    path,
   )}`;
   const res = await fetch(apiUrl);
   if (!res.ok) {
@@ -291,7 +410,7 @@ treeContainer.addEventListener("click", (e) => {
 async function showPythonProjectFolder(folderNode) {
   const folderPath = folderNode.path;
   const githubTreeUrl = `https://github.com/GrizX4051k/python-and-mips-projects/tree/main/${encodeURIComponent(
-    folderPath
+    folderPath,
   )}`;
 
   let entries;
@@ -299,7 +418,7 @@ async function showPythonProjectFolder(folderNode) {
     entries = await fetchGithubContents(folderPath);
   } catch (e) {
     setContent(
-      `<div class="alert alert-danger">Could not load folder listing for ${folderNode.label}.</div>`
+      `<div class="alert alert-danger">Could not load folder listing for ${folderNode.label}.</div>`,
     );
     return;
   }
@@ -345,6 +464,7 @@ async function showPythonProjectFolder(folderNode) {
   const readme =
     files.find((f) => f.name.toLowerCase() === "readme.md") ||
     files.find((f) => f.name.toLowerCase().startsWith("readme"));
+    
 
   let defaultFile =
     files.find((f) => f.name === "main.py") ||
@@ -373,19 +493,18 @@ async function showPythonProjectFolder(folderNode) {
             </div>
             <ul class="list-group app-file-list">
               ${entries
-                .map((e) => {
-                  const isDir = e.type === "dir";
-                  const icon = isDir ? "bi-folder" : "bi-file-earmark-code";
-                  const meta = isDir ? "folder" : "file";
-                  return `
-                  <li class="list-group-item file-item ${
-                    isDir ? "disabled" : ""
-                  }" data-fname="${e.name}">
+      .map((e) => {
+        const isDir = e.type === "dir";
+        const icon = isDir ? "bi-folder" : "bi-file-earmark-code";
+        const meta = isDir ? "folder" : "file";
+        return `
+                  <li class="list-group-item file-item ${isDir ? "disabled" : ""
+          }" data-fname="${e.name}">
                     <span><i class="bi ${icon} me-1"></i>${e.name}</span>
                     <span class="file-meta">${meta}</span>
                   </li>`;
-                })
-                .join("")}
+      })
+      .join("")}
             </ul>
           </div>
 
@@ -423,9 +542,7 @@ async function showPythonProjectFolder(folderNode) {
             </div>
             <div class="card h-100">
               <div class="card-body">
-                <pre style="white-space:pre-wrap; font-size:0.85rem;">${
-                  readme ? escapeHtml(readme.text) : "No README.md found for this folder."
-                }</pre>
+                <div style="font-size:0.85rem;" id="readme-render"></div>
               </div>
             </div>
           </div>
@@ -439,12 +556,14 @@ async function showPythonProjectFolder(folderNode) {
             <div class="card h-100">
               <div class="card-body">
                 <iframe
+                  id="onecompiler-frame"
                   frameborder="0"
                   height="260px"
-                  src="https://onecompiler.com/embed/python"
+                  src="https://onecompiler.com/embed/python?theme=dark&codeChangeEvent=true"
                   width="100%"
                   style="border:1px solid rgba(148,163,184,0.4);border-radius:0.75rem;"
                 ></iframe>
+
                 <small class="text-muted d-block mt-2" style="font-size:0.8rem;">
                   Copy or send the current file into the editor above and run it.
                 </small>
@@ -458,6 +577,14 @@ async function showPythonProjectFolder(folderNode) {
   `;
 
   setContent(html);
+  const readmeContainer = document.getElementById("readme-render");
+  if (readmeContainer) {
+    if (readme) {
+      readmeContainer.innerHTML = marked.parse(readme.text);
+    } else {
+      readmeContainer.textContent = "No README.md found for this folder.";
+    }
+  }
 
   const codeView = document.getElementById("code-view");
   const currentLabel = document.getElementById("current-file-label");
@@ -470,7 +597,9 @@ async function showPythonProjectFolder(folderNode) {
   document.querySelectorAll(".file-item").forEach((li) => {
     if (li.classList.contains("disabled")) return;
     li.addEventListener("click", () => {
-      document.querySelectorAll(".file-item").forEach((x) => x.classList.remove("active"));
+      document
+        .querySelectorAll(".file-item")
+        .forEach((x) => x.classList.remove("active"));
       li.classList.add("active");
       const fname = li.dataset.fname;
       const f = files.find((x) => x.name === fname);
@@ -498,14 +627,23 @@ async function showPythonProjectFolder(folderNode) {
     }
   });
 
-  document.getElementById("btn-send").addEventListener("click", async () => {
-    if (!currentFile) return;
+document.getElementById("btn-send").addEventListener("click", async () => {
+  const frame = document.getElementById("onecompiler-frame");
+  const codeView = document.getElementById("code-view");
+  if (!frame || !frame.contentWindow || !codeView) return;
+
+  const code = codeView.textContent || "";
+    
+
     try {
-      await navigator.clipboard.writeText(codeView.textContent);
-      alert("Code copied. Paste it into the editor above.");
+      await navigator.clipboard.writeText(code);
     } catch {
-      alert("Could not send to editor.");
+      // ignore clipboard failure; postMessage still worked
     }
+
+    alert(
+      "Sent to editor. If you don't see it, click inside the editor iframe.",
+    );
   });
 }
 
@@ -554,11 +692,114 @@ const searchList = document.getElementById("search-list");
 
 searchForm.addEventListener("submit", (e) => {
   e.preventDefault();
+});
+
+// Live filter the current root’s children + College Project nested
+searchForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+});
+
+searchInput.addEventListener("input", () => {
   const q = searchInput.value.trim().toLowerCase();
   if (!q) {
-    searchResultsBox.classList.add("d-none");
+    // restore current root view
+    renderTree(currentRoot);
     return;
   }
+  renderSearchTree(q);
+});
+
+function renderSearchTree(query) {
+  const matchName = (name) => name.toLowerCase().includes(query);
+  let html = `<div class="fw-semibold mb-2">Search results</div><ul class="list-unstyled">`;
+
+  const addSection = (title) => {
+    html += `<li class="mt-1 mb-1 small text-muted">${title}</li>`;
+  };
+
+  let any = false;
+
+  // docs
+  const docMatches = Object.entries(repoTree.docs.children).filter(([name]) =>
+    matchName(name),
+  );
+  if (docMatches.length) {
+    any = true;
+    addSection("docs");
+    docMatches.forEach(([name]) => {
+      html += `
+        <li>
+          <div class="tree-node" data-root="docs" data-name="${name}">
+            <span class="icon">📄</span>${name}
+          </div>
+        </li>
+      `;
+    });
+  }
+
+  // mips
+  const mipsMatches = Object.entries(repoTree.mips.children).filter(([name]) =>
+    matchName(name),
+  );
+  if (mipsMatches.length) {
+    any = true;
+    addSection("mips");
+    mipsMatches.forEach(([name]) => {
+      html += `
+        <li>
+          <div class="tree-node" data-root="mips" data-name="${name}">
+            <span class="icon">📁</span>${name}
+          </div>
+        </li>
+      `;
+    });
+  }
+
+  // python top-level
+  const pyMatches = Object.entries(repoTree.python.children).filter(
+    ([name]) => name !== "College Project" && matchName(name),
+  );
+  if (pyMatches.length) {
+    any = true;
+    addSection("python");
+    pyMatches.forEach(([name]) => {
+      html += `
+        <li>
+          <div class="tree-node" data-root="python" data-name="${name}">
+            <span class="icon">📁</span>${name}
+          </div>
+        </li>
+      `;
+    });
+  }
+
+  // College children
+  const college = repoTree.python.children["College Project"];
+  if (college && college.children) {
+    const collegeMatches = Object.entries(college.children).filter(([name]) =>
+      matchName(name),
+    );
+    if (collegeMatches.length) {
+      any = true;
+      addSection("python / College Project");
+      collegeMatches.forEach(([name]) => {
+        html += `
+          <li>
+            <div class="tree-node" data-root="college" data-name="${name}">
+              <span class="icon">📁</span>${name}
+            </div>
+          </li>
+        `;
+      });
+    }
+  }
+
+  if (!any) {
+    html += `<li class="mt-2 small text-muted">No result found</li>`;
+  }
+
+  html += `</ul>`;
+  treeContainer.innerHTML = html;
 
   const matches = [];
 
@@ -588,7 +829,7 @@ searchForm.addEventListener("submit", (e) => {
     searchList.appendChild(li);
   }
   searchResultsBox.classList.toggle("d-none", matches.length === 0);
-});
+}
 
 searchList.addEventListener("click", (e) => {
   const li = e.target.closest("li");

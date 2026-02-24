@@ -119,6 +119,35 @@ body.app-body {
 }
 
 /* ---------- Content / cards ---------- */
+.readme-markdown {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.readme-markdown h1,
+.readme-markdown h2,
+.readme-markdown h3 {
+  margin-top: 0.6rem;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+}
+
+.readme-markdown p {
+  margin-bottom: 0.4rem;
+}
+
+.readme-markdown code {
+  background-color: rgba(15, 23, 42, 0.9);
+  padding: 0.1rem 0.3rem;
+  border-radius: 0.25rem;
+}
+
+.readme-markdown pre {
+  background-color: rgba(15, 23, 42, 0.95);
+  padding: 0.6rem 0.8rem;
+  border-radius: 0.5rem;
+  overflow: auto;
+}
 
 .card {
   border-radius: 0.9rem;
